@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Nalla Reddy</string>
+    <string name="search_products">Search Products</string>
+    <string name="delete_products">Delete Products</string>
+    <string name="update_products">Update Products</string>
+    <string name="home">Home</string>
+    <string name="add_cat_value">You Clicked Add Category</string>
+    <string name="price">109</string>
+    <string name="price2">52</string>
+    <string name="sprice">Selling</string>
+    <string name="cat_name">Category Name</string>
+    <string name="aprice">Actual</string>
+    <string name="search_hint"> Search Product</string>
+</resources>

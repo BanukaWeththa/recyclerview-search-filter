@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text1"
+                android:text="Add Product"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text1"
+                android:id="@+id/pname"
+                android:hint="Product Name"
+                />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:focusedByDefault="true"
+                android:layout_below="@id/pname"
+                android:spinnerMode="dialog" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner"
+                android:id="@+id/sprice"
+                android:hint=" Actual Price"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sprice"
+                android:id="@+id/bprice"
+                android:hint=" Selling Price"
+                />
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/pbutton"
+                android:layout_height="wrap_content"
+                android:text="A D D"
+                android:textColor="#FFF"
+                android:background="@color/colorPrimaryDark"
+
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
