@@ -6,25 +6,25 @@
         android:id="@+id/home"
         android:title="@string/home"
         app:showAsAction="never" />
+
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search"
-        android:title="Search"
-        app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="android.support.v7.widget.SearchView"/>
-    <item
-        android:id="@+id/Search_products"
+        android:id="@+id/add_cat"
         android:orderInCategory="100"
-        android:title="@string/search_products"
+        android:title="@string/add_cats"
         app:showAsAction="never" />
+
     <item
-        android:id="@+id/delete_products"
+        android:id="@+id/del_cats"
         android:orderInCategory="100"
-        android:title="@string/delete_products"
+        android:title="@string/delete"
         app:showAsAction="never" />
+
     <item
-        android:id="@+id/update_products"
+        android:id="@+id/export"
         android:orderInCategory="100"
-        android:title="@string/update_products"
+        android:title="@string/export"
         app:showAsAction="never" />
+
+
+
 </menu>

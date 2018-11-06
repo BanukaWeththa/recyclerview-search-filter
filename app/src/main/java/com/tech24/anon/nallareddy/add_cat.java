@@ -1,16 +1,12 @@
 package com.tech24.anon.nallareddy;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuView;
-import android.support.v7.widget.AppCompatSpinner;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,9 +17,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import static android.icu.text.MessagePattern.ArgType.SELECT;
-import static com.tech24.anon.nallareddy.db_contract.proEntry._ID;
-
 public class add_cat extends AppCompatActivity {
 
     Button editbutton;
@@ -33,6 +26,7 @@ public class add_cat extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_category);
+        getSupportActionBar().setTitle("Add Categories");
         AddDefaultCat();
         editbutton = (Button) findViewById(R.id.edit_cat_button);
         editText = (EditText) findViewById(R.id.edit_cat1);
@@ -60,15 +54,19 @@ public class add_cat extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.Search_products) {
+        if (id == R.id.home) {
+            Intent intent = new Intent(add_cat.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.add_cat) {
             Intent intent = new Intent(add_cat.this, add_cat.class);
             startActivity(intent);
             return true;
         }
-        if (id == R.id.delete_products) {
-            return true;
-        }
-        if (id == R.id.update_products) {
+        if (id == R.id.del_cats) {
+            Intent intent = new Intent(add_cat.this, del_cat.class);
+            startActivity(intent);
             return true;
         }
 

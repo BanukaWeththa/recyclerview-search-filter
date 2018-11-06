@@ -30,6 +30,7 @@ public class edit_view extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_text);
+        getSupportActionBar().setTitle("Edit Products");
         getIncomingIntent();
         final Button delete = (Button) findViewById(R.id.edit_del_button);
         Button edit = (Button) findViewById(R.id.edit_pbutton);

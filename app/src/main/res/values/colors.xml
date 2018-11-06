@@ -3,7 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#000000</color>
-    <color name="grey">#999999</color>
+    <color name="grey">#00999999</color>
     <color name="delete">#FF0000</color>
     <color name="divider">#727272</color>
     <color name="title">#107896</color>

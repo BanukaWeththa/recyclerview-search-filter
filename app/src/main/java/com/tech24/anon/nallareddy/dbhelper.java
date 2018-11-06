@@ -117,31 +117,14 @@ public class dbhelper extends SQLiteOpenHelper {
         return prodslist;
     }
 
-    public ArrayList<String> getAllPods()
-    {
-        ArrayList<String> podslist =new ArrayList<>();
-        //get readable database
-        SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT name FROM products_list",null);
-        if(cursor.moveToFirst())
-        {
-            do {
-                podslist.add(cursor.getString(0));
-            }while (cursor.moveToNext());
-        }
-        //close the cursor
-        cursor.close();
-        //close the database
-        db.close();
-        return podslist;
-    }
+
 
     public ArrayList<String> getProCats()
     {
         ArrayList<String> catslist =new ArrayList<>();
         //get readable database
         SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT category FROM products_list",null);
+        Cursor cursor=db.rawQuery("SELECT name FROM category",null);
         if(cursor.moveToFirst())
         {
             do {
@@ -155,60 +138,5 @@ public class dbhelper extends SQLiteOpenHelper {
         return catslist;
     }
 
-    public ArrayList<String> get_act_price()
-    {
-        ArrayList<String> act_price =new ArrayList<>();
-        //get readable database
-        SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT actual_price FROM products_list",null);
-        if(cursor.moveToFirst())
-        {
-            do {
-                act_price.add(cursor.getString(0));
-            }while (cursor.moveToNext());
-        }
-        //close the cursor
-        cursor.close();
-        //close the database
-        db.close();
-        return act_price;
-    }
 
-    public ArrayList<String> get_sel_price()
-    {
-        ArrayList<String> sel_price =new ArrayList<>();
-        //get readable database
-        SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT selling_price FROM products_list",null);
-        if(cursor.moveToFirst())
-        {
-            do {
-                sel_price.add(cursor.getString(0));
-            }while (cursor.moveToNext());
-        }
-        //close the cursor
-        cursor.close();
-        //close the database
-        db.close();
-        return sel_price;
-    }
-
-    public ArrayList<String> getIds()
-    {
-        ArrayList<String> ids =new ArrayList<>();
-        //get readable database
-        SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT _ID FROM products_list",null);
-        if(cursor.moveToFirst())
-        {
-            do {
-                ids.add(cursor.getString(0));
-            }while (cursor.moveToNext());
-        }
-        //close the cursor
-        cursor.close();
-        //close the database
-        db.close();
-        return ids;
-    }
 }

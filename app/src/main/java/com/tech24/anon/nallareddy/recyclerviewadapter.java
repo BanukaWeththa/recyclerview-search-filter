@@ -18,26 +18,13 @@ import static android.content.ContentValues.TAG;
 
 public class recyclerviewadapter extends RecyclerView.Adapter<recyclerviewadapter.ViewHolder> implements Filterable {
     private ArrayList<getdata> products = new ArrayList<>();
-    private ArrayList<String> pro_names = new ArrayList<>();
-    private ArrayList<String> cat_names = new ArrayList<>();
-    private ArrayList<String> a_price = new ArrayList<>();
-    private ArrayList<String> s_price = new ArrayList<>();
-    private ArrayList<String> ids = new ArrayList<>();
     private ArrayList<getdata> filteredlist = new ArrayList<>();
-    private ArrayList<String> filter_cat_names = new ArrayList<>();
-    private ArrayList<String> filter_a_price = new ArrayList<>();
-    private ArrayList<String> filter_s_price = new ArrayList<>();
-    private ArrayList<String> filter_ids = new ArrayList<>();
+
     private Context mcontext;
 
-    public recyclerviewadapter(Context mcontext, ArrayList<String> pro_names, ArrayList<String> cat_names, ArrayList<String> a_price, ArrayList<String> s_price, ArrayList<String> ids, ArrayList<getdata> products) {
+    public recyclerviewadapter(Context mcontext, ArrayList<getdata> products) {
         this.products = products;
         this.filteredlist = products;
-        this.pro_names = pro_names;
-        this.cat_names = cat_names;
-        this.a_price = a_price;
-        this.s_price = s_price;
-        this.ids = ids;
         this.mcontext = mcontext;
     }
 

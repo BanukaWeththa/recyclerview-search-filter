@@ -1,6 +1,5 @@
 package com.tech24.anon.nallareddy;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -34,6 +33,7 @@ public class add_products extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_products);
+        getSupportActionBar().setTitle("Add Products");
         spinner = (Spinner) findViewById(R.id.spinner);
         loadSpinnerData();
         pname = (EditText) findViewById(R.id.pname);
@@ -84,15 +84,19 @@ public class add_products extends AppCompatActivity implements AdapterView.OnIte
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.Search_products) {
+        if (id == R.id.home) {
+            Intent intent = new Intent(add_products.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.add_cat) {
             Intent intent = new Intent(add_products.this, add_cat.class);
             startActivity(intent);
             return true;
         }
-        if (id == R.id.delete_products) {
-            return true;
-        }
-        if (id == R.id.update_products) {
+        if (id == R.id.del_cats) {
+            Intent intent = new Intent(add_products.this, del_cat.class);
+            startActivity(intent);
             return true;
         }
 

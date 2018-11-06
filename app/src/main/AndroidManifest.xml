@@ -38,6 +38,14 @@
                 android:value="com.tech24.anon.nallareddy.MainActivity" />
 
         </activity>
+        <activity android:name=".del_cat">
+            android:parentActivityName="com.tech24.anon.nallareddy.MainActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tech24.anon.nallareddy.MainActivity" />
+
+        </activity>
         <activity android:name=".edit_view">
             android:parentActivityName="com.tech24.anon.nallareddy.MainActivity" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -46,6 +54,16 @@
                 android:value="com.tech24.anon.nallareddy.MainActivity" />
 
         </activity>
-    </application>
+        <activity android:name=".import_export">
+            android:parentActivityName="com.tech24.anon.nallareddy.MainActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tech24.anon.nallareddy.MainActivity" />
 
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

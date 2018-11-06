@@ -19,11 +19,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
     private ArrayList<getdata> products = new ArrayList<>();
-    private ArrayList<String> pro_names = new ArrayList<>();
-    private ArrayList<String> cat_names = new ArrayList<>();
-    private ArrayList<String> a_price = new ArrayList<>();
-    private ArrayList<String> s_price = new ArrayList<>();
-    private ArrayList<String> ids = new ArrayList<>();
     private SearchView searchView;
     recyclerviewadapter adapter;
 //    private Context mcontext;
@@ -49,6 +44,7 @@ public class MainActivity extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.search_menu, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menu.findItem(R.id.search)
@@ -85,15 +81,24 @@ public class MainActivity extends AppCompatActivity{
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.Search_products) {
+        if (id == R.id.home) {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.add_cat) {
             Intent intent = new Intent(MainActivity.this, add_cat.class);
             startActivity(intent);
             return true;
         }
-        if (id == R.id.delete_products) {
+        if (id == R.id.del_cats) {
+            Intent intent = new Intent(MainActivity.this, del_cat.class);
+            startActivity(intent);
             return true;
         }
-        if (id == R.id.update_products) {
+        if (id == R.id.export) {
+            Intent intent = new Intent(MainActivity.this, import_export.class);
+            startActivity(intent);
             return true;
         }
 
@@ -104,18 +109,13 @@ public class MainActivity extends AppCompatActivity{
     private void initProductList(){
         dbhelper getpro = new dbhelper(MainActivity.this);
         products = getpro.getAllProds();
-        pro_names = getpro.getAllPods();
-        cat_names = getpro.getProCats();
-        a_price = getpro.get_act_price();
-        s_price = getpro.get_sel_price();
-        ids = getpro.getIds();
         initRecycler();
     }
 
     private void initRecycler() {
         Log.d("TAG", "initRecyclerView: Reycler View Initiated");
         RecyclerView recyclerView = findViewById(R.id.content_main);
-        adapter = new recyclerviewadapter(this, pro_names, cat_names, a_price, s_price, ids, products);
+        adapter = new recyclerviewadapter(this, products);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
